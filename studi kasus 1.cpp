@@ -6,12 +6,11 @@ using namespace std;
 int main(){	
 	int a=17000 ,b=21000;
 	int porsi, menu, jumlah, bayar, kembali;
-	float  diskon, total;
 	string nama;
 	time_t now = time(0);
 	char* dt = ctime(&now);
 	
-	cout<<"=============RM ALPRO MAKYUS============= "<<endl;
+	cout<<"=============RM ALPRO MAKNYUS============= "<<endl;
 	cout<<"NAMA PEMBELI : ";
 	cin>>nama;
 	cout<<"NAMA MAKANAN: "<<endl;
@@ -23,24 +22,31 @@ int main(){
 	if (menu==1){
 		cout<<"Masukan jumlah porsi : "; cin>>porsi;
 		jumlah = porsi*a;
-		cout<<"Total harga Rp."<<jumlah<<endl;
+		
+		if (jumlah >= 45000) {
+			cout<<"Total harga Rp."<<jumlah<<endl;
+			jumlah = jumlah-(jumlah*0.10);
+			cout<<"Selamat anda mendapat diskon 10%"<<endl;
+		}
+	
 	}
 	else{
 		cout<<"Masukan jumlah porsi : "; cin>>porsi;
 		jumlah = porsi*b;
-		cout<<"Total Harga Rp."<<jumlah<<endl;
+		
+		if (jumlah >= 45000) {
+			cout<<"Total Harga Rp."<<jumlah<<endl;
+			jumlah = jumlah-(jumlah*0.10);
+			cout<<"Selamat anda mendapat diskon 10%"<<endl;
+		}
+		
 	}
-	if(jumlah=<45000);
-
-	diskon = bayar-10%;
-	cin>>diskon;
-	cout<<"Total pembayaran : Rp."<<diskon<<endl;
 	
-	}
-	if(jumlah=>45000){
+	cout<<"Total yang harus dibayar : Rp."<<jumlah<<endl;
 	
-	cout<<"Total pembayaran : Rp."<<jumlah<<endl;
-
+	do {
+		cout<<"Jumlah uang yang dibayar : Rp."; cin>>bayar;
+	} while (bayar < jumlah);
 	
 	system("cls");
 	
