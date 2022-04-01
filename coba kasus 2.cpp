@@ -22,58 +22,83 @@ int main(){
 	cout<<"4. CUMI GORENG "<<endl;
 	cout<<"5. AYAM BAKAR  "<<endl;
 	cout<<"PILIH MENU MAKANAN : ";
-	cin>>menu;
-	if (menu==1){
-		cout<<"Masukan jumlah porsi : "; cin>>porsi;
-		jumlah = porsi*a;
-	}
 	
-	else if(menu==2){
-		cout<<"Masukan jumlah porsi : "; cin>>porsi;
-		jumlah = porsi*b;
+	do {
+		
+		cin>>menu;
+		
+		if (menu==1){
+			cout<<"Masukan jumlah porsi : "; cin>>porsi;
+			jumlah = porsi*a;
+		}
+		
+		else if(menu==2){
+			cout<<"Masukan jumlah porsi : "; cin>>porsi;
+			jumlah = porsi*b;
+		
+		}
+		
+		else if(menu==3){
+			cout<<"Masukan jumlah porsi : "; cin>>porsi;
+			jumlah = porsi*c;
+		}
+		
+		else if (menu==4){
+			cout<<"Masukan jumlah porsi : "; cin>>porsi;
+			jumlah = porsi*d;
+		}
+		
+		else if (menu==5){
+			cout<<"Masukan jumlah porsi : "; cin>>porsi;
+			jumlah = porsi*e;
+		}
+		
+		else {
+			cout<<"Pilih menu 1 sampai 5"<<endl;
+		}
 	
-	}
+	} while (!(menu >= 1 && menu <= 5));
 	
-	else if(menu==3){
-		cout<<"Masukan jumlah porsi : "; cin>>porsi;
-		jumlah = porsi*c;
-	}
-	
-	else if (menu==4){
-		cout<<"Masukan jumlah porsi : "; cin>>porsi;
-		jumlah = porsi*d;
-	}
-	else{
-		cout<<"Masukan jumlah porsi : "; cin>>porsi;
-		jumlah = porsi*e;
-	}
 	
 	cout<<"Total yang harus dibayar : Rp."<<jumlah<<endl;
-	if (Jarak>=3){
+	if (Jarak<=3){
 		Ongkir=15000;
-}
-	else (Jarak>=3);{
+	}
+	else if (Jarak>3){
 		Ongkir=25000;
-}
+	}
 
 	cout<<"Ongkir yang harus dibayar : Rp."<<Ongkir<<endl;
+		if (jumlah > 25000 ) {
+			
+			if (jumlah > 50000) {
+				
+				if (jumlah > 150000) {
+					cout<<"Total harga Rp."<<jumlah+Ongkir<<endl;
+					Ongkir = Ongkir - 8000;
+					jumlah = jumlah-(jumlah*0.35);
+					jumlah = jumlah + Ongkir;
+					cout<<"Selamat anda mendapat diskon 35% dan potongan ongkir sebanyak 8000"<<endl;
+					cout<<"Total harga Rp."<<jumlah<<endl;
+				} else {
+					cout<<"Total harga Rp."<<jumlah+Ongkir<<endl;
+					Ongkir = Ongkir - 5000;
+					jumlah = jumlah-(jumlah*0.15);
+					jumlah = jumlah + Ongkir;
+					cout<<"Selamat anda mendapat diskon 15% dan potongan ongkir 5000"<<endl;
+					cout<<"Total harga Rp."<<jumlah<<endl;
+				}
+				
+			} else {
+				cout<<"Total harga Rp."<<jumlah+Ongkir<<endl;
+				Ongkir = Ongkir - 3000;
+				jumlah = jumlah + Ongkir;
+				cout<<"Selamat anda mendapat potongan biaya ongkir 3000"<<endl;
+				cout<<"Total harga Rp."<<jumlah<<endl;
+			}
+			
+		}
 	
-		if (jumlah >=25000 ) {
-			cout<<"Total harga Rp."<<jumlah<<endl;
-			jumlah = jumlah-3000;
-			cout<<"Selamat anda mendapat potongan biaya ongkir 3000"<<endl;
-		}
-		else if(jumlah >=50000 ) {
-			cout<<"Total harga Rp."<<jumlah<<endl;
-			jumlah = jumlah-(jumlah*0.15)-(Ongkir-5000);
-			cout<<"Selamat anda mendapat diskon 15% dan potongan ongkir 5000"<<endl;
-		}
-		else (jumlah >=150000 );{
-			cout<<"Total harga Rp."<<jumlah<<endl;
-			jumlah = jumlah-(jumlah*0.35)-(Ongkir-8000);
-			cout<<"Selamat anda mendapat diskon 35% dan potongan ongkir sebanyak 8000"<<endl;
-		}
-
 	do {
 		cout<<"Jumlah uang yang dibayar : Rp."; cin>>bayar;
 	} while (bayar < jumlah);
@@ -83,7 +108,7 @@ int main(){
 	cout<<"==================STRUK PEMBELIAN DELIVERY RM ALPRO MAKYUS================="<<endl;
 	cout<<"==============================================================="<<endl<<endl;
 	cout<<"Nama Pembeli \t\t: "<<nama<<endl;
-	cout<<"Total Jarak (KM)\t\t: "<<Jarak<<endl;
+	cout<<"Total Jarak (KM)\t: "<<Jarak<<endl;
 	if (menu ==1 ){
 	cout<<"Jenis menu \t\t: "<<"AYAM GEPREK"<<endl;
 	}
@@ -100,9 +125,8 @@ int main(){
 	{
 	cout<<"Jenis menu \t\t: "<<"AYAM BAKAR"<<endl;
 	}
-	cout<<"Total banyak pembelian : "<<porsi<<" Porsi"<<endl;
-	cout<<"Total Harga \t\t: Rp."<<jumlah<<endl;
-	cout<<"Total Ongkir\t\t: Rp."<<Ongkir<<endl;
+	cout<<"Total banyak pembelian  : "<<porsi<<" Porsi"<<endl;
+	cout<<"Total Harga + Ongkir \t: Rp."<<jumlah<<endl;
 	cout<<"Total pembayaran \t: Rp."<<bayar<<endl;
 	kembali = bayar-jumlah;
 	cout<<"Total kembalian \t: Rp."<<kembali<<endl<<endl;
